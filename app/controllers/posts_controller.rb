@@ -1,7 +1,19 @@
 class PostsController < ApplicationController
-  def new; end
+  def new
+    @post = Post.new
+  end
 
-  def create; end
+  def create
+    @post = Post.new
 
-  def index; end
+    if @post.save
+      redirect_to @post
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def index
+    @posts = Post.all
+  end
 end
