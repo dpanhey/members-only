@@ -1,0 +1,17 @@
+<h1>
+  Title: <%= @posts.title %> </div>
+</h1>
+
+<h1>
+  Author: <% if user_signed_in? %>
+            <%= @user = User.find(@posts.user_id).username %>
+          <% else %>
+            <em><%= 'Sign In to see Author' %></em>
+          <% end %>
+</h1>
+
+<h1>Body: <%= @posts.body %></h1>
+
+<ul>
+  <li><%= link_to 'Index', root_path %></li>
+</ul>

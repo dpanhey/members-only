@@ -17,6 +17,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_205025) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "users_id"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
     t.index ["users_id"], name: "index_posts_on_users_id"
   end
 

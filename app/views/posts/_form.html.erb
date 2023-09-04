@@ -1,4 +1,11 @@
 <%= form_with model: post do |form| %>
+
+  <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+
   <div>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
